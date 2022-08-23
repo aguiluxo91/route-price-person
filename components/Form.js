@@ -64,12 +64,6 @@ export default function Form() {
 
     const [checkBox, setCheckBox] = useState(false)
 
-    const colors = (price) => {
-        if (price < 6 || (checkBox && price < 13)) return 'text-success'
-        if (price <= 16 || (checkBox && price < 32)) return 'text-warning'
-        if (price > 16 || (checkBox && price > 32)) return 'text-danger'
-    }
-
     const isValid = () => {
         const { errors } = state;
         return !Object.keys(errors).some(error => errors[error]);
@@ -127,6 +121,12 @@ export default function Form() {
         else return pricePerPerson
     }
 
+    const colors = (price) => {
+        if (price < 6 || (checkBox && price < 13)) return 'text-success'
+        if (price <= 16 || (checkBox && price < 32)) return 'text-warning'
+        if (price > 16 || (checkBox && price > 32)) return 'text-danger'
+    }
+
 
     const { data, errors, touch, price } = state;
 
@@ -153,7 +153,7 @@ export default function Form() {
                             }`}
                         placeholder="Distance to your destiny in Kms"
                         min="0"
-                        step="0.01"
+                        step="0.1"
                         onBlur={handleBlur}
                         onChange={handleChange}
                         value={data.distance}
@@ -171,7 +171,7 @@ export default function Form() {
                             }`}
                         placeholder="Consumption of your car every 100 Kms"
                         min="0"
-                        step="0.01"
+                        step="0.1"
                         onBlur={handleBlur}
                         onChange={handleChange}
                         value={data.consumptionAt100}
@@ -218,12 +218,13 @@ export default function Form() {
                 <button className="btn btn-primary m-auto w-100" type="submit" disabled={!isValid()}>
                     Calculate!
                 </button>
+                {price &&
+                    <div className='col-md-12 text-center m-3'>
+                        <h3 className={colors(price)}>Calculated Price {price} €</h3>
+                    </div>
+                }
             </form>
-            {price &&
-                <div className='col-md-12 text-center'>
-                    <h3 className={colors(price)}>Calculated Price {price} €</h3>
-                </div>
-            }
+
         </>
     )
 }
