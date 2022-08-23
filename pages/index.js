@@ -15,7 +15,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossOrigin="anonymous"></link>
       </Head>
-      <main className='d-inline-block'>
+      <main className='d-block'>
         <div className="d-flex flex-column align-items-center justify-content-center vh-100 bg-light w-100 row gx-0 position-static">
           <h1 className="mb-4 text-primary col-md-12 text-center">Calculate the price for your car journey</h1>
           <Form />
