@@ -48,7 +48,7 @@ export default function FuelStations() {
     return (
         <div>
             {fuelStations.map((fuelStation, i) => (
-                <div key={i} className="card m-3">
+                <div key={i} className="card mb-3 w-75 mx-auto">
                     <div className="card-header text-dark">
                         {fuelStation.Rótulo}
                     </div>
