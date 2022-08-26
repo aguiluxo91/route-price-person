@@ -1,39 +1,5 @@
-import { useEffect, useState } from 'react';
 
-export default function FuelStations() {
-    const [state, setState] = useState({
-        fuelStations: [],
-        loading: false
-    })
-
-
-    useEffect(() => {
-
-        async function fetchFuelStations() {
-            console.log('Fetching Fuel Stations...');
-            setState(state => ({
-                ...state,
-                loading: true
-            }))
-            const fuelStations = await fetch("https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/EstacionesTerrestres/")
-                .then(fuelStations => fuelStations.json())
-            if (!isUnmounted) {
-                setState({
-                    fuelStations: fuelStations.ListaEESSPrecio,
-                    loading: false
-                })
-            }
-        }
-        let isUnmounted = false;
-
-
-        fetchFuelStations();
-
-        return () => {
-            isUnmounted = true;
-        }
-
-    }, []);
+export default function FuelStation ({ filteredFuelStations }) {
 
     const capitalizeFirstLetter = (string) => {
         const words = string.split(' ')
@@ -41,13 +7,11 @@ export default function FuelStations() {
             return word[0]?.toUpperCase() + word.substring(1); 
         });
         return capitalizedWords.join(" ")
-      }
-
-    const { fuelStations } = state;
+    }
 
     return (
         <div>
-            {fuelStations.map((fuelStation, i) => (
+            {filteredFuelStations.map((fuelStation, i) => (
                 <div key={i} className="card mb-3 w-75 mx-auto">
                     <div className="card-header text-dark">
                         {fuelStation.Rótulo}
