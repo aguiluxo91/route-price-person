@@ -72,9 +72,9 @@ export default function FuelStationsList() {
         <>
             {loading && <div className="ping"></div>}
             {!loading &&
-                <form onSubmit={handleSubmit} className="mx-auto my-3 col-md-2 d-flex flex-column">
+                <form onSubmit={handleSubmit} className="mx-auto my-3 col-6 col-md-2 d-flex flex-column">
                     <div className='input-group mb-3'>
-                        <span htmlFor="CP" className='input-group-text'><svg height="21" viewBox="0 0 21 21" width="21" xmlns="http://www.w3.org/2000/svg"><g fill="none" fillRule="evenodd" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"><circle cx="8.5" cy="8.5" r="5"/><path d="m17.571 17.5-5.571-5.5"/></g></svg></span>
+                        <span htmlFor="CP" className='input-group-text'><svg height="21" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg"><g fill="none" fillRule="evenodd" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"><circle cx="8.5" cy="8.5" r="5"/><path d="m17.571 17.5-5.571-5.5"/></g></svg></span>
                         <input
                         type="number"
                         className='form-control'

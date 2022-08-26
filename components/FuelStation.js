@@ -10,16 +10,16 @@ export default function FuelStation ({ filteredFuelStations }) {
     }
 
     return (
-        <div>
+        <>
             {filteredFuelStations.map((fuelStation, i) => (
                 <div key={i} className="card mb-3 w-75 mx-auto">
-                    <div className="card-header text-dark">
-                        {fuelStation.Rótulo}
+                    <div className="card-header text-success text-decoration-underline">
+                        <strong>{fuelStation.Rótulo}</strong>
                     </div>
                     <div className="card-body">
                         <blockquote className="blockquote mb-0">
                             <p className='text-dark'>{capitalizeFirstLetter(fuelStation.Dirección.toLowerCase())}</p>
-                            <p className='text-muted fs-6'>{fuelStation.Horario}</p>
+                            <p className='text-muted fs-6'>Horarios: {fuelStation.Horario}</p>
                             {fuelStation["Precio Gasoleo A"] &&
                                 <p className='fw-light fs-6 text-dark'>Precio Gasoleo A <span className='fw-semibold'>{fuelStation["Precio Gasoleo A"]} €</span></p>
                             }
@@ -32,6 +32,6 @@ export default function FuelStation ({ filteredFuelStations }) {
                     </div>
                 </div>
             ))}
-        </div>
+        </>
     )
 }
