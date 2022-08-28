@@ -3,11 +3,23 @@ body {
   padding: 0;
   margin: 0;
   font-family: Monserrat;
-  background-color: whitesmoke;
+  background: whitesmoke;
+  color:cornflowerblue;
 }
 
 * {
   box-sizing: border-box;
+}
+
+.main-box {
+  background-image: url("/journey.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.main-form {
+  opacity: 0.91
 }
 
 .ping {
@@ -69,4 +81,30 @@ body {
 
 .icon img{
   -webkit-filter: invert(100%);
+}
+
+.journey {
+  position: relative;
+  font-family: "Avenir Next", sans-serif;
+  font-weight: 900;
+  font-size: 54px;
+  text-transform: uppercase;
+  font-style: italic;
+  letter-spacing: 0.05em;
+  display: inline-block;
+  text-align: center;
+  margin: 10px 0;
+
+}
+
+.journey:before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  content: attr(filter-content);
+  filter: url(#motion-blur-filter);
+}
+
+svg {
+  display: none;
 }

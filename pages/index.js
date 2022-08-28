@@ -18,12 +18,22 @@ export default function Home() {
       </Head>
 
       <main>
-        <div className="d-flex align-items-center flex-column justify-content-center row gx-0">
-          <h1 className="my-4 text-primary text-center">Calculate the price for your car journey</h1>
-          <Form />
-          <FuelStationsList />
-        <Footer />
+        <div className="main-box mb-3">
+          <div className="d-flex align-items-center flex-column justify-content-center row gx-0">
+            <div className='w-100 d-flex justify-content-center'>
+              <svg xmlns="http://www.w3.org/2000/svg">
+                <filter id="motion-blur-filter" filterUnits="userSpaceOnUse">
+                  <feGaussianBlur stdDeviation="200 0"></feGaussianBlur>
+                </filter>
+              </svg>
+              <span filter-content="Journey" className="journey">Journey Calculator</span>
+            </div>
+            <Form />
+          </div>
         </div>
+        <FuelStationsList />
+        <Footer />
+
       </main>
 
       <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></Script>

@@ -133,7 +133,7 @@ export default function Form() {
 
     return (
         <>
-            <form onSubmit={handleSubmit} className="shadow p-3 mb-5 bg-body rounded text-dark col-md-6">
+            <form onSubmit={handleSubmit} className="shadow p-3 mb-5 bg-body rounded text-dark col-md-6 fw-bold main-form">
                 <div className="input-group mb-3">
                     <input
                         type="checkbox"

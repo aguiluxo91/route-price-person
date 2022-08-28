@@ -133,9 +133,9 @@ export default function FuelStationsList() {
 
     return (
         <>
-            {loading && <div className="ping mb-3"></div>}
+            {loading && <div className="ping mb-3 mx-auto"></div>}
             {!loading &&
-                <div className='col-11 col-md-8 border shadow mb-4 rounded bg-body'>
+                <div className='col-11 col-md-8 border shadow mb-4 rounded bg-body mx-auto'>
                     <h3 className='text-center text-success m-2 text-decoration-underline'>Look for your nearest Fuel Station:</h3>
                     
                     {(filter.cp && filter.city) && <p className="text-center fs-6 text-danger">Enter only 1 field</p>}
