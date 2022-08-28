@@ -92,7 +92,7 @@ export default function FuelStationsList() {
             filteredFuelStations = filterByCP.sort((a, b) => Number(a["Precio Gasoleo A"].replace(/,/g, ".")) - Number(b["Precio Gasoleo A"].replace(/,/g, ".")))
         }
         if (filter.city.length > 3 && !filter.cp) {
-            const filterByCity = fuelStations.filter(fuelStation => eliminarDiacriticos(fuelStation.Municipio.toLowerCase()).includes(filter.city.toLowerCase()))
+            const filterByCity = fuelStations.filter(fuelStation => eliminarDiacriticos(fuelStation.Municipio.toLowerCase()).includes(eliminarDiacriticos(filter.city.toLowerCase())))
             filteredFuelStations = filterByCity.sort((a, b) => Number(a["Precio Gasoleo A"].replace(/,/g, ".")) - Number(b["Precio Gasoleo A"].replace(/,/g, ".")))
         }
         if (filteredFuelStations?.length > 1) {
@@ -152,7 +152,7 @@ export default function FuelStationsList() {
                                 id='cp'
                                 name='cp'
                             />
-                            <button className='btn btn-primary' disabled={!isValid('cp')}>Search</button>
+                            <button className='btn btn-primary rounded-end' disabled={!isValid('cp')}>Search</button>
                             <div className="invalid-feedback">{errors.cp}</div>
                         </div>
                     </form>
@@ -169,7 +169,7 @@ export default function FuelStationsList() {
                                 id='city'
                                 name='city'
                             />
-                            <button className='btn btn-primary mx-auto' disabled={!isValid('city')}>Search</button>
+                            <button className='btn btn-primary rounded-end' disabled={!isValid('city')}>Search</button>
                             <div className="invalid-feedback">{errors.city}</div>
                         </div>
 
