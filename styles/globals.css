@@ -10,16 +10,6 @@ body {
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
-}
-
 .ping {
   --uib-size: 50px;
   --uib-speed: 1s;
