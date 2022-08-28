@@ -113,11 +113,11 @@ export default function FuelStationsList() {
     const isValid = (error) => {
         const { filter } = state
         if (error === 'cp') {
-            if (filter.cp.length === 5) {
+            if (filter.cp.length === 5 && !filter.city) {
                 return true
             }
         }
-        if (error === 'city') {
+        if (error === 'city' && !filter.cp) {
             if (filter.city.length > 3) {
                 return true
             }
@@ -134,6 +134,9 @@ export default function FuelStationsList() {
             {!loading &&
                 <div className='col-12 col-md-8 border shadow mb-4 rounded'>
                     <h3 className='text-center text-success m-2 text-decoration-underline'>Look for your nearest Fuel Station:</h3>
+                    
+                    {(filter.cp && filter.city) && <p className="text-center fs-6 text-danger">Enter only 1 field</p>}
+
                     <form onSubmit={handleSubmit} className="mx-auto my-3 col-12 col-sm-6 col-md-4 rounded">
                         <div className='input-group mb-3'>
                             <span htmlFor="cp" className='input-group-text'><svg height="20" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg"><g fill="none" fillRule="evenodd" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" transform="translate(3 4)"><path d="m2.5.5h10c1.1045695 0 2 .8954305 2 2v8c0 1.1045695-.8954305 2-2 2h-10c-1.1045695 0-2-.8954305-2-2v-8c0-1.1045695.8954305-2 2-2z" /><path d="m10.5 2.5h1c.5522847 0 1 .44771525 1 1v1c0 .55228475-.4477153 1-1 1h-1c-.55228475 0-1-.44771525-1-1v-1c0-.55228475.44771525-1 1-1z" /><path d="m2.5 7.5h5" /><path d="m2.5 9.5h5" /></g></svg></span>
