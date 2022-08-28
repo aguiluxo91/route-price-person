@@ -49,3 +49,24 @@ body {
    opacity: 0;
   }
  }
+
+ .icon {
+  background-color: black;
+  margin: 7px;
+  padding: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .8s cubic-bezier(.175,.885,.32,1.275);
+  border: 1px solid white;
+  border-radius: 50%;
+}
+
+.icon:hover {
+  -webkit-filter: invert(100%);
+
+}
+
+.icon img{
+  -webkit-filter: invert(100%);
+}

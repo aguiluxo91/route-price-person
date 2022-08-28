@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Script from 'next/script'
+import Footer from '../components/Footer';
 import Form from '../components/Form';
 import FuelStationsList from '../components/FuelStationsList';
 
@@ -21,6 +22,7 @@ export default function Home() {
           <h1 className="my-4 text-primary text-center">Calculate the price for your car journey</h1>
           <Form />
           <FuelStationsList />
+        <Footer />
         </div>
       </main>
 

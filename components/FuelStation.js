@@ -12,7 +12,7 @@ export default function FuelStation({ filteredFuelStations }) {
     return (
         <>
             {filteredFuelStations.map((fuelStation, i) => (
-                <>
+                <div key={i}>
                     {(fuelStation["Precio Gasolina 95 ES"] || fuelStation["Precio Gasoleo A"]) &&
                         <div key={i} className="card mb-3 w-75 mx-auto">
                             <div className="card-header text-success text-decoration-underline">
@@ -34,7 +34,7 @@ export default function FuelStation({ filteredFuelStations }) {
                             </div>
                         </div>
                     }
-                </>
+                </div>
             ))}
         </>
     )
