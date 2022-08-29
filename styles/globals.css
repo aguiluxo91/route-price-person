@@ -105,6 +105,6 @@ body {
   filter: url(#motion-blur-filter);
 }
 
-svg {
+.svg-blur {
   display: none;
 }

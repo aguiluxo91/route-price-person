@@ -21,7 +21,7 @@ export default function Home() {
         <div className="main-box mb-3">
           <div className="d-flex align-items-center flex-column justify-content-center row gx-0">
             <div className='w-100 d-flex justify-content-center'>
-              <svg xmlns="http://www.w3.org/2000/svg">
+              <svg className='svg-blur' xmlns="http://www.w3.org/2000/svg">
                 <filter id="motion-blur-filter" filterUnits="userSpaceOnUse">
                   <feGaussianBlur stdDeviation="200 0"></feGaussianBlur>
                 </filter>
